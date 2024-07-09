@@ -20,15 +20,19 @@ jobs:
       uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: 1.8.4
+    
+    - name: Terraform Init
+      run: terraform init
 
     - name: Validate Terraform
-      id: validate
-      run: terraform validate
+      run: |
+        cd my-terraform-project
+        terraform validate
 
     - name: Check Lock File
-      id: check_lock
       run: |
-        if [ ! -f terraform.lock.hcl ]; then
+        cd my-terraform-project
+        if [ ! -f .terraform.lock.hcl ]; then
           echo "Lock file not found!"
           exit 1
         fi
