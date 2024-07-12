@@ -3,10 +3,10 @@ name: Terraform Validate
 run-name: ${{ github.actor }} - ${{ github.ref_name }}
 
 on:
-  pull_request:
-    branches: ["main"]
-
-  workflow_dispatch:
+    pull_request:
+      branches: ["main"]
+  
+    workflow_dispatch:
 
 jobs:
   terraform:
