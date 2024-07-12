@@ -3,10 +3,10 @@ name: Terraform Validate
 run-name: ${{ github.actor }} - ${{ github.ref_name }}
 
 on:
-    pull_request:
-      branches: ["main"]
-  
-    workflow_dispatch:
+  pull_request:
+    branches: ["main"]
+
+  workflow_dispatch:
 
 jobs:
   terraform:
@@ -20,6 +20,11 @@ jobs:
       uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: 1.8.4
+
+    - name: Initialize Terraform
+      run: |
+        cd my-terraform-project
+        terraform init
 
     - name: Validate Terraform
       id: validate
