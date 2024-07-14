@@ -8,12 +8,14 @@ terraform {
 }
 
 provider "azurerm" {
-  features {}
+  features {
+    
+  }
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "West Europe"
+  name     = "haupt_system"
+  location = "UK South"
 }
 
 resource "azurerm_storage_account" "example" {
