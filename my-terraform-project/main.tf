@@ -13,7 +13,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "example" {
   name     = "haupt"
-  location = "UK South"
+  location = "West Europe"
 }
 
 resource "azurerm_storage_account" "example" {
