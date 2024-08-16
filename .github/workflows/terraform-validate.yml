@@ -20,16 +20,6 @@ jobs:
       uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: 1.8.4
-    
-    - name: Terraform Init
-      run: |
-        cd ./my-terraform-project/
-        terraform init
-
-    - name: Validate Terraform
-      run: |
-        cd my-terraform-project
-        terraform validate
 
     - name: Check Lock File
       run: |
@@ -39,3 +29,13 @@ jobs:
           exit 1
         fi
         echo "Lock file found and verified."
+
+    - name: Terraform Init
+      run: |
+        cd ./my-terraform-project/
+        terraform init
+
+    - name: Validate Terraform
+      run: |
+        cd my-terraform-project
+        terraform validate
