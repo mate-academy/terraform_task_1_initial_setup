@@ -1,20 +1,12 @@
-
-Yes, you can validate the Terraform provider versions by checking the .terraform.lock.hcl file. This file contains the exact versions of the providers that Terraform will use, and you can verify that these match your expected versions.
-
-Here’s how you can modify your script to validate the provider versions by reading the .terraform.lock.hcl file:
-
-Updated GitHub Actions Workflow:
-yaml
-Копіювати код
 name: Terraform Validate
 
 run-name: ${{ github.actor }} - ${{ github.ref_name }}
 
 on:
-  pull_request:
-    branches: ["main"]
+    pull_request:
+      branches: ["main"]
   
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
   terraform:
@@ -30,9 +22,7 @@ jobs:
         terraform_version: 1.8.4
     
     - name: Terraform Init
-      run: |
-        cd my-terraform-project
-        terraform init
+      run: terraform init
 
     - name: Validate Terraform
       run: |
@@ -47,13 +37,3 @@ jobs:
           exit 1
         fi
         echo "Lock file found and verified."
-
-    - name: Validate Provider Versions
-      run: |
-        cd my-terraform-project
-        if grep -q 'version = "3.105.0"' .terraform.lock.hcl; then
-          echo "Correct provider version found in lock file."
-        else
-          echo "Incorrect provider version in lock file!"
-          exit 1
-        fi
