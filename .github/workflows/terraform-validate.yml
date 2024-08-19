@@ -3,10 +3,10 @@ name: Terraform Validate
 run-name: ${{ github.actor }} - ${{ github.ref_name }}
 
 on:
-  pull_request:
-    branches: ["main"]
-
-  workflow_dispatch:
+    pull_request:
+      branches: ["main"]
+  
+    workflow_dispatch:
 
 jobs:
   terraform:
@@ -22,38 +22,17 @@ jobs:
         terraform_version: 1.8.4
     
     - name: Terraform Init
-      run: |
-        if [ -d "my-terraform-project" ]; then
-          cd my-terraform-project
-          terraform init
-        else
-          echo "Directory my-terraform-project not found. Skipping Terraform initialization."
-        fi
+      run: terraform init
 
     - name: Validate Terraform
       run: |
-        if [ -d "my-terraform-project" ]; then
-          cd my-terraform-project
-          if ! terraform validate; then
-            echo "Terraform validation failed."
-            exit 1
-          fi
-          echo "Terraform validation succeeded."
-        else
-          echo "Directory my-terraform-project not found, attempting to validate .terraform.lock.hcl instead."
-          if [ ! -f "my-terraform-project/.terraform.lock.hcl" ]; then
-            echo "Lock file not found!"
-            exit 1
-          fi
-          echo "Lock file found and verified."
-        fi
+        cd my-terraform-project
+        terraform validate
 
     - name: Check Lock File
       run: |
-        if [ -d "my-terraform-project" ]; then
-          cd my-terraform-project
-        fi
-        if [ ! -f ".terraform.lock.hcl" ]; then
+        cd my-terraform-project
+        if [ ! -f .terraform.lock.hcl ]; then
           echo "Lock file not found!"
           exit 1
         fi
