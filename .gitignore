@@ -1,8 +1,8 @@
 # Виключити всю теку з бінарними файлами провайдерів та іншими службовими файлами
-.terraform/
-*.tfstate
-*.tfstate.*
-crash.log
+my-terraform-project/.terraform/
+my-terraform-project/*.tfstate
+my-terraform-project/*.tfstate.*
+my-terraform-project/crash.log
 
 # Включити lock-файл, як вимагає завдання (це скасовує виключення .terraform/)
-!.terraform.lock.hcl
+!my-terraform-project/.terraform.lock.hcl
