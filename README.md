@@ -1,4 +1,4 @@
-# Terraform Initial Setup 
+# Terraform Initial Setup
 
 This repository contains the hands-on task for the **Infrastructure as Code with Terraform** module. This task involves customizing and initializing a Terraform project.
 
@@ -14,4 +14,4 @@ This repository contains the hands-on task for the **Infrastructure as Code with
 2. Customize the Terraform configuration. Make a minor change, such as updating the resource group name.
 3. Initialize the Terraform project.
 4. Commit the `.terraform.lock.hcl` to the GitHub repository.
-5. Submit a PR with your changes for validation. 
+5. Submit a PR with your changes for validation.
