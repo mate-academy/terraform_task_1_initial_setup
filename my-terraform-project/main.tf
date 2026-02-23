@@ -12,7 +12,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "mate-resources"
+  name     = "rg-vsupruniuk-demo"
   location = "West Europe"
 }
 
