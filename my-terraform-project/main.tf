@@ -11,12 +11,12 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "myexample" {
   name     = "my-example-resources"
   location = "West Europe"
 }
 
-resource "azurerm_storage_account" "example" {
+resource "azurerm_storage_account" "myexample" {
   name                     = "examplestorageacc"
   resource_group_name      = azurerm_resource_group.myexample.name
   location                 = azurerm_resource_group.myexample.location
