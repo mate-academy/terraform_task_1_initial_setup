@@ -12,12 +12,13 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+  name     = "diana-resource-group"
   location = "West Europe"
 }
 
+
 resource "azurerm_storage_account" "example" {
-  name                     = "examplestorageacc"
+  name                     = "diana-resource-group-pomidorchickichky"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
   account_tier             = "Standard"
