@@ -12,8 +12,8 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "West Europe"
+  name     = "mate-resources"
+  location = "Denmark East"
 }
 
 resource "azurerm_storage_account" "example" {
