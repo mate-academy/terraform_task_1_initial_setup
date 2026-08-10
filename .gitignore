@@ -1,0 +1,3 @@
+my-terraform-project/.terraform/
+my-terraform-project/*.tfstate
+my-terraform-project/*.tfstate.*
