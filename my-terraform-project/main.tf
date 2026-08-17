@@ -12,7 +12,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+  name     = "vanyas627-resources"
   location = "West Europe"
 }
 
