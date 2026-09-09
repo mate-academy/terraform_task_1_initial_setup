@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
-      version = "3.105.0"
+      source  = "hashicorp/azurerm"
+      version = "5.4.0"
     }
   }
 }
@@ -12,7 +12,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+  name     = "mate-rg-task1"
   location = "West Europe"
 }
 
