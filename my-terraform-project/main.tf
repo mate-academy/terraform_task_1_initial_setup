@@ -17,7 +17,7 @@ resource "azurerm_resource_group" "resources" {
 }
 
 resource "azurerm_storage_account" "storage" {
-  name                     = "rodops-storage"
+  name                     = "rodopsstorage"
   resource_group_name      = azurerm_resource_group.resources.name
   location                 = azurerm_resource_group.resources.location
   account_tier             = "Standard"
