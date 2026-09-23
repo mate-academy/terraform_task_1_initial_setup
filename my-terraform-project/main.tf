@@ -18,8 +18,8 @@ resource "azurerm_resource_group" "example" {
 
 resource "azurerm_storage_account" "example" {
   name                     = "examplestorageacc"
-  resource_group_name      = azurerm_resource_group.example.name
-  location                 = azurerm_resource_group.example.location
+  resource_group_name      = "my_project_rp"
+  location                 = "my_project_rp_location"
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }

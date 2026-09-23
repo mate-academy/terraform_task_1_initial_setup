@@ -1,0 +1,1 @@
+Add-Content -Path .gitignore -Value ".terraform/`n*.tfstate`n*.tfstate.*`ncrash.log`noverride.tf`n*.exe"
