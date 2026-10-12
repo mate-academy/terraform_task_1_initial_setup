@@ -12,12 +12,12 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+  name     = "rg-olehvehera-terraform"
   location = "West Europe"
 }
 
 resource "azurerm_storage_account" "example" {
-  name                     = "examplestorageacc"
+  name                     = "stolehveheratf"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
   account_tier             = "Standard"
